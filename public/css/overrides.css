@@ -1,0 +1,86 @@
+body {
+  background-color: #272733;
+}
+
+label {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+@media (min-width: 1200px) {
+
+  .container {
+    width:970px !important;
+  }
+
+  .header-content {
+    padding:55px 0px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .header-content-details {
+    padding:0px 15px !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .header-content-details {
+    padding:0px 15px !important;
+  }
+}
+
+#contactForm > .input-group > .input-group-btn > button {
+  margin-top: 3px;
+  min-height: 50px
+}
+
+@media only screen and (max-width: 600px) {
+  #contactForm > .input-group > .input-group-btn > button {
+    margin-top: 13px;
+    min-height: 40px
+  }
+}
+
+
+
+.modal-form .form-control {
+  color: #666666;
+  background: #f7f7f7;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  border: 1px solid #ebebeb;
+  border-radius: 0;
+  margin-bottom: 30px;
+  padding: 10px 20px;
+  min-height: 50px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.modal-form textarea {
+  max-width: 100%;
+  min-height: 130px !important;
+  max-height: 211px;
+  padding: 20px !important;
+}
+
+.modal-form .input-group > .input-group-btn > a > button {
+  margin-top: -25px;
+  min-height: 50px;
+  margin-left:0px;
+}
+
+@media only screen and (max-width: 600px) {
+  .modal-form .input-group > .input-group-btn > button {
+    margin-top: 13px;
+    min-height: 40px
+  }
+}
+
+.text-default {
+  color: #373e62 !important;
+}

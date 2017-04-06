@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Julian Day Calculator">
+<meta name="keywords" content="Julian, Julian Day, Calculator" />
+<meta name="author" content="brad">
+
+<!-- favicon -->
+<link rel="icon" href="images/favicon.png">
+
+<!-- page title -->
+<title>get-a-JULIAN</title>
+
+<!-- bootstrap css -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- css -->
+<link href="css/style.css" rel="stylesheet">
+<link href="css/animate.css" rel="stylesheet">
+<link href="css/owl.carousel.css" rel="stylesheet">
+<link href="css/owl.theme.css" rel="stylesheet">
+<link href="css/overrides.css" rel="stylesheet">
+<link href="css/toastr.css" rel="stylesheet"/>
+<link href="css/bootstrap-datepicker3.min.css" rel="stylesheet"/>
+
+<!-- fonts -->
+<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:700" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href='fonts/FontAwesome.otf' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/linear-icons.css">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+</head>
+
+<body>
+
+<div id="top" data-toggle="top"></div>
+
+<!-- header -->
+<header id="header-5" class="dark-header">
+    <div class="container">
+        <!-- navbar-1 inverse -->
+        <nav class="navbar-1 navbar navbar-default nav-w-top-space rounded">
+            <div class="container-fluid navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                <a class="text-default navbar-brand" href="#">
+                  get-a-<span class="text-primary">JULIAN</span>.com
+                </a>
+            </div><!-- / navbar-header -->
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                      <label class="btn btn-info-filled-nav">
+                        <a href="javascript:void(0)" data-toggle="modal"
+                          data-target="#checkOutTheAPI">Check out the API</a>
+                      </label>
+                    </li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </nav><!-- / navbar-1 inverse -->
+        <div class="header-content">
+            <div class="row">
+               <div class="col-sm-6">
+                    <!-- contact form 1 -->
+                    <div id="contact-form-1">
+                        <h3 class="log-title">Julian Day Calculator</h3>
+                        <label class="control-label input-group">Enter a date on the calendar:</label>
+                        <form id="contactForm" action="/" method="post" data-toggle="validator">
+                            <div class="form-group">
+                                <input value="" name="calendarDate" class="form-control rounded" id="calendarDate"
+                                  placeholder="Enter a Date" required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+
+                            <div class="form-group">
+                              <label for="year" class="control-label input-group">Format:</label>
+
+                              <div class="btn-group" data-toggle="buttons">
+                                <label class="btn btn-default active">
+                                  <input type="radio" name="format" value="day" checked="">Julian Day
+                                </label>
+                                <label class="btn btn-default">
+                                  <input type="radio" name="format" value="date">Julian Date
+                                </label>
+                              </div>
+                            </div>
+
+                            <br />
+
+                            <button type="submit" id="form-submit" class="btn btn-lg btn-primary-filled btn-form-submit">
+                              Calculate
+                            </button>
+
+                            <div id="msgSubmit" class="h3 text-center hidden"></div>
+                            <div class="clearfix"></div>
+
+                            <br />
+
+                            <div class="input-group">
+                              <label class="control-label input-group">Below is your result:</label>
+
+                              <input value="<%= result %>" id="result" readonly type="text" class="form-control text-danger"
+                                style="color:red" placeholder="#####">
+
+                              <span class="input-group-btn">
+                                <button id="copyToClipboard" data-clipboard-target="#result" class="btn btn-md btn-warning-filled"
+                                    data-toggle="tooltip" data-placement="top" title="copy to clipboard" type="button">
+                                    <i class="fa fa-copy"></i>
+                                </button>
+                              </span>
+                            </div>
+
+                        </form>
+                    </div><!-- / contact form 1 -->
+                </div><!-- / col-sm-6 -->
+                <div class="col-sm-6 header-content-details">
+                    <h3 class="header-brand">The <span class="text-primary">JULIAN</span> calendar </h3>
+
+                    <p> The Julian calendar, proposed by Julius Caesar in 46 BC (708 AUC), was a reform of the Roman calendar. It took effect on
+                        1 January 45 BC (AUC 709), by edict. It was the predominant calendar in the Roman world, most of Europe, and in European
+                        settlements in the Americas and elsewhere, until it was refined and gradually replaced by the Gregorian calendar, promulgated
+                        in 1582 by Pope Gregory XIII. The Julian calendar gains against the mean tropical year at the rate of one day in 128 years.
+                        For the Gregorian the figure is one day in 3,030 years. The difference in the average length of the year between Julian
+                        (365.25 days) and Gregorian (365.2425 days) is 0.002%.
+                    </p>
+
+                    <p>
+                      The Julian calendar has a regular year of 365 days divided into 12 months, as listed in the table below. A leap day is
+                      added to February every four years. The Julian year is, therefore, on average 365.25 days long. It was intended
+                      to approximate the tropical (solar) year. Although Greek astronomers had known..
+                      <a href="https://en.wikipedia.org/wiki/Julian_calendar">read more</a>
+                    </p>
+
+                </div><!-- / col-sm-6 -->
+            </div><!-- / row -->
+        </div><!-- / header-content -->
+
+        <footer class="dark-footer">
+          <p class="footer-info">© 2017 - <strong>get-a-julian.com</strong> - Julian Day Calculator
+            <span class="pull-right">
+              <a href="javascript:void(0)" data-toggle="modal" data-target="#termsOfUse" class="text-muted">Terms of Use</a>
+            </span>
+          </p>
+        </footer>
+
+    </div><!-- / container -->
+</header>
+<!-- / header -->
+
+<!-- terms of use -->
+<!-- Modal -->
+<div class="modal fade" id="termsOfUse" tabindex="-1" role="dialog" aria-labelledby="ModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="ModalLabel">Terms of Use</h4>
+      </div>
+      <div class="modal-body">THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+        EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+        MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+        NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+        LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+        OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+        WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger-filled" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- --->
+
+
+<!-- API modal -->
+<!-- Modal -->
+<div class="modal fade modal-form" id="checkOutTheAPI" tabindex="-1" role="dialog" aria-labelledby="ModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="ModalLabel">API</h4>
+      </div>
+      <div class="modal-body">
+        <h5>Julian Day API</h5>
+        <p class="input-group">
+            <input type="text" id="julianDayApi" value="" class="form-control" />
+
+            <span class="input-group-btn">
+              <a id="julianDayApiUrl" target="_blank" href="#">
+                <button type="button" class="btn btn-md btn-warning-filled">Test</button>
+              </a>
+            </span>
+        </p>
+        <br />
+        <h5>Julian Date API</h5>
+        <p class="input-group">
+          <input id="julianDateApi" type="text" value="" class="form-control" />
+
+          <span class="input-group-btn">
+            <a id="julianDateApiUrl" target="_blank" href="#">
+              <button type="button" class="btn btn-md btn-warning-filled">Test</button>
+            </a>
+          </span>
+        </p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info-filled" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- --->
+
+
+<!-- javascript -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.easing.min.js"></script>
+<script src="js/bootstrap-datepicker.min.js"></script>
+
+<!-- scrolling nav -->
+<script src="js/scrolling-nav.js"></script>
+<!-- / scrolling nav -->
+
+<!-- contact form -->
+<!-- <script src="js/validator.min.js" type="text/javascript"></script>
+<script src="js/form-scripts.js" type="text/javascript"></script> -->
+<!-- / contact form -->
+
+
+<!-- hide nav -->
+<script src="js/hide-nav.js"></script>
+<!-- / hide nav -->
+
+<!-- toast messages -->
+<script src="js/toastr.min.js"></script>
+
+<!-- clipboard -->
+<script src="js/clipboard.min.js"></script>
+
+<!-- moment -->
+<script src="js/moment-with-locales.min.js"></script>
+
+<script>
+
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  });
+
+  var julianDayApiUrl = "/api/getJulianDay";
+  var julianDateApiUrl = "/api/getJulianDate";
+
+  var todaysDate = moment().format("MM/DD/YYYY");
+
+  // set these elements with today's date (client date)
+  $("#calendarDate").val(todaysDate);
+
+  $("#julianDayApi").val(julianDayApiUrl + "?date=" + todaysDate);
+  $("#julianDayApiUrl").attr("href", julianDayApiUrl + "?date=" + todaysDate);
+
+  $("#julianDateApi").val(julianDateApiUrl + "?date=" + todaysDate);
+  $("#julianDateApiUrl").attr("href", julianDateApiUrl + "?date=" + todaysDate);
+
+
+  var clipboard = new Clipboard('#copyToClipboard');
+
+  clipboard.on('success', function(e) {
+
+      if (e == undefined || e.text == undefined || e.text == "")
+        return;
+
+      toastr.info(e.text + ' has been copied to your clipboard!');
+      e.clearSelection();
+  });
+
+  clipboard.on('error', function(e) {
+      toastr.error('Something went wrong and we could not access the clipboard.');
+  });
+
+  $('#calendarDate').datepicker();
+
+  console.log('created by brad as a way to learn a new technology.');
+
+</script>
+
+<script>
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-96585070-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- / javascript -->
+</body>
+
+</html>

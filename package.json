@@ -1,0 +1,16 @@
+{
+  "name": "get-a-julian",
+  "description": "get-a-julian - Julian Day Calculator",
+  "version": "0.0.3",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "bootstrap-datepicker": "^1.6.4",
+    "clipboard": "^1.6.1",
+    "ejs": "^2.5.6",
+    "express": "3.x",
+    "julian": "^0.1.0",
+    "moment": "^2.18.1",
+    "toastr": "^2.1.2"
+  }
+}
